@@ -1,9 +1,15 @@
-function setup() {
+let starx=[];
+let stary=[];
 
+function setup() {
+createCanvas(400,400);
 }
 
 function draw() {
-
+background(22, 36, 102);
+for (i=0; i<stary.length;i++){
+    star(starx[i],stary[i])
+}
 }
 
 /**
@@ -20,3 +26,10 @@ function star(x, y) {
     triangle(x - 20, y - 5, x, y + 10, x - 35, y + 30);
     triangle(x, y + 10, x + 20, y - 5, x + 35, y + 30);
 }
+
+function mouseClicked(){
+    starx.push(mouseX);
+    stary.push(mouseY);
+}
+
+
